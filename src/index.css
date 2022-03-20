@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    display: grid;
+    overflow: scroll;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: min-content 1fr min-content;
+    font-family: 'Anklepants';
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    grid-column: 1 / 3;
+    height: 100px;
+    background-color:gold;
+    padding: 4px 40px;
+    font-size: 18px;
+    border-bottom: 2px solid black;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.header__title {
+    font-size: 16px;
+}
+
+.header__navigation {
+    margin-left: 40px;
+}
+
+.header__search {
+    width: 100%;
+    max-height: 100px;
+    max-width: 300px;
+    margin-left: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.side_panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background-color:grey;
+    border-right: 2px solid black;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    grid-column: 1 / 3;
+    height: 100px;
+    padding: 10px 40px;
+    background-color: gold ;
+    font-size: 18px;
+    border-top: 2px solid black;
+}
+
+.footer__navigation {
+    display: flex;
+    flex-direction: column;
+}
+
+.tags {
+    list-style: none;
+    font-size: 22px;
+}
+
+.tag {
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.tag:hover {
+    color: gold;
+}
+
+.other-tags {
+    list-style: none;
+    font-size: 18px;
+}
+
+.other-tag {
+    margin-bottom: 30px;
+    cursor: pointer;
+    color: gold;
+}
+
+.other-tag:hover {
+    color: black;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+    padding: 8px;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.content {
+    padding: 5px;
+    background-color: lightgrey;
+}
+
+.category {
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    margin-right: 50px;
+}
+
+.card {
+    position: relative;
+    float: left;
+    width: 250px;
+    height: 300px;
+    background-color: grey;
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: inherit;
+    margin-left: 20px;
+    margin-top: 20px;
+    border: 2px solid black;
+}
+
+.card-image {
+    width: 100%;
+    height: 80%;
+    border-bottom: 2px solid black;
+}
+
+.card-body {
+    padding: 3px 10px;
+}
+
+.card-title {
+    font-size: inherit;
+}
+
+.card-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-title:hover a{
+    color: gold;
+}
+
+.card-artist {
+    font-size: 16px;
+    padding-top: 8px;
+}
+
+.card-artist a {
+    text-decoration: none;
+    color: white;
+}

@@ -18,9 +18,10 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>BlissMusic</title>
+    <link rel="stylesheet" href="/template/src/index.css" />
   </head>
-  <body>
+  <body class="app">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -33,5 +34,207 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <header class="header">
+        <a href="/" class="header__logo link">
+          <img src="./images/wolf.png" alt="Логотип" width="64" height="64" />
+          <h1 class="header__title">BlissMusic</h1>
+        </a>
+        <input type="search" class="header__search" placeholder="Поиск трека..." />
+        <nav class="header__navigation">
+          <a href="/" class="link">Subscription</a>
+          <a href="/" class="link">Profile</a>
+        </nav>
+      </header>
+    <aside class="side_panel">
+      <ul class="tags">
+        <li class="tag" tabindex="0">Home</li>
+        <li class="tag" tabindex="0">My library</li>
+        <li class="tag" tabindex="0">Create playlist</li>
+      </ul>
+      <ul class="other-tags">
+        <li class="other-tag" tabindex="0">In trend</li>
+        <li class="other-tag" tabindex="0">Top Gaming Tracks</li>
+        <li class="other-tag" tabindex="0">Top Russian Tracks</li>
+        <li class="other-tag" tabindex="0">World Top 100</li>
+        <li class="other-tag" tabindex="0"></li>
+      </ul>
+    </aside>
+    <main class="content">
+      <h2 class="category">Music for you</h2>
+      <div class="cards">
+        <div class="card">
+          <a href="#">
+            <img src="./images/may_waves.jpg" class="card-image" alt="avatar">
+          </a>
+          <div class="card-body">
+            <div class="card-title">
+              <a href="#">Dead Love</a>
+            </div>
+            <div class="card-artist">
+              <a href="#">May Waves</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="#">
+            <img src="./images/camry.jpg" class="card-image" alt="avatar">
+          </a>
+          <div class="card-body">
+            <div class="card-title">
+              <a href="#">Camry 3.5</a>
+            </div>
+            <div class="card-artist">
+              <a href="#">UncleFlexxx</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="#">
+            <img src="./images/rauf_and_faik.jpg" class="card-image" alt="avatar">
+          </a>
+          <div class="card-body">
+            <div class="card-title">
+              <a href="#">I love you</a>
+            </div>
+            <div class="card-artist">
+              <a href="#">Rauf & Faik</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="#">
+            <img src="./images/white_box.jpg" class="card-image" alt="avatar">
+          </a>
+          <div class="card-body">
+            <div class="card-title">
+              <a href="#">White box</a>
+            </div>
+            <div class="card-artist">
+              <a href="#">Nothing</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="#">
+            <img src="./images/white_box.jpg" class="card-image" alt="avatar">
+          </a>
+          <div class="card-body">
+            <div class="card-title">
+              <a href="#">White box</a>
+            </div>
+            <div class="card-artist">
+              <a href="#">Nothing</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="#">
+            <img src="./images/white_box.jpg" class="card-image" alt="avatar">
+          </a>
+          <div class="card-body">
+            <div class="card-title">
+              <a href="#">White box</a>
+            </div>
+            <div class="card-artist">
+              <a href="#">Nothing</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="category">Car Music</h2>
+      <div class="cards">
+        <div class="card">
+          <a href="#">
+            <img src="./images/001.jpg" class="card-image" alt="avatar">
+          </a>
+          <div class="card-body">
+            <div class="card-title">
+              <a href="#">001</a>
+            </div>
+            <div class="card-artist">
+              <a href="#">FREE FLOW FLAVA</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="#">
+            <img src="./images/faith.jpg" class="card-image" alt="avatar">
+          </a>
+          <div class="card-body">
+            <div class="card-title">
+              <a href="#">Faith</a>
+            </div>
+            <div class="card-artist">
+              <a href="#">FREE FLOW FLAVA</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="#">
+            <img src="./images/keske.jpg" class="card-image" alt="avatar">
+          </a>
+          <div class="card-body">
+            <div class="card-title">
+              <a href="#">Eurobeat</a>
+            </div>
+            <div class="card-artist">
+              <a href="#">Initial D</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="#">
+            <img src="./images/white_box.jpg" class="card-image" alt="avatar">
+          </a>
+          <div class="card-body">
+            <div class="card-title">
+              <a href="#">White box</a>
+            </div>
+            <div class="card-artist">
+              <a href="#">Nothing</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="#">
+            <img src="./images/white_box.jpg" class="card-image" alt="avatar">
+          </a>
+          <div class="card-body">
+            <div class="card-title">
+              <a href="#">White box</a>
+            </div>
+            <div class="card-artist">
+              <a href="#">Nothing</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="#">
+            <img src="./images/white_box.jpg" class="card-image" alt="avatar">
+          </a>
+          <div class="card-body">
+            <div class="card-title">
+              <a href="#">White box</a>
+            </div>
+            <div class="card-artist">
+              <a href="#">Nothing</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>© 2022 shakhnazaryan vachik</p>
+      <p>*Здесь должен быть плеер</p>
+      <nav class="footer__navigation">
+        <a class="link" href="./">Pricing</a>
+        <a 
+        class="link" 
+        href="https://vk.com/vachikshakhnazaryan"
+        target="_blank"
+        rel="noopener"
+        >Vk</a> 
+      </nav>
+    </footer>
   </body>
 </html>
