@@ -1,3 +1,5 @@
+@import url(https://allfont.ru/allfont.css?fonts=anklepants);
+
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +8,10 @@
 
 .app {
     display: grid;
-    overflow: scroll;
+    overflow: auto;
     grid-template-columns: 200px 1fr;
     grid-template-rows: min-content 1fr min-content;
-    font-family: 'Anklepants';
+    font-family: 'Cooper Black';
 }
 
 .header {
@@ -21,6 +23,7 @@
     padding: 4px 40px;
     font-size: 18px;
     border-bottom: 2px solid black;
+    width: 100%;
 }
 
 .header__logo {
@@ -53,6 +56,8 @@
     padding: 20px;
     background-color:grey;
     border-right: 2px solid black;
+    width: 100%;
+    height: 100%;
 }
 
 .footer {
@@ -64,6 +69,10 @@
     background-color: gold ;
     font-size: 18px;
     border-top: 2px solid black;
+    width: 100%;
+    height: 100%;
+    position: sticky;
+    bottom: 0;
 }
 
 .footer__navigation {
@@ -88,6 +97,8 @@
 .other-tags {
     list-style: none;
     font-size: 18px;
+    position: sticky;
+    bottom: 13%;
 }
 
 .other-tag {
@@ -113,6 +124,8 @@
 .content {
     padding: 5px;
     background-color: lightgrey;
+    width: 100%;
+    height: 100%;
 }
 
 .category {
@@ -121,25 +134,27 @@
 }
 
 .cards {
-    display: flex;
-    flex-direction: row;
-    justify-content:flex-start;
+    /* display: grid; */
+    /* flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap; */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
     flex-wrap: wrap;
-    margin-right: 50px;
+    display: flex;
 }
 
 .card {
     position: relative;
-    float: left;
+    margin: 1%;
+    /* float: left; */
     width: 250px;
     height: 300px;
     background-color: grey;
     border-radius: 5px;
     overflow: hidden;
     font-family: inherit;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     margin-top: 20px;
-    border: 2px solid black;
 }
 
 .card-image {
