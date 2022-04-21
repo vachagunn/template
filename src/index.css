@@ -1,4 +1,4 @@
-@import url(https://allfont.ru/allfont.css?fonts=anklepants);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
 
 * {
     margin: 0;
@@ -11,7 +11,7 @@
     overflow: auto;
     grid-template-columns: 200px 1fr;
     grid-template-rows: min-content 1fr min-content;
-    font-family: 'Cooper Black';
+    font-family: 'Roboto', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .header {
@@ -75,6 +75,10 @@
     bottom: 0;
 }
 
+.audio {
+    margin-top: 0.5%;
+}
+
 .footer__navigation {
     display: flex;
     flex-direction: column;
@@ -83,6 +87,8 @@
 .tags {
     list-style: none;
     font-size: 22px;
+    position: sticky;
+    top: 1%;
 }
 
 .tag {
@@ -98,7 +104,7 @@
     list-style: none;
     font-size: 18px;
     position: sticky;
-    bottom: 13%;
+    bottom: 15%;
 }
 
 .other-tag {
@@ -134,26 +140,26 @@
 }
 
 .cards {
-    /* display: grid; */
-    /* flex-direction: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-gap: 20px;
+    margin: 1%;
+    /* display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap; */
-    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-    flex-wrap: wrap;
-    display: flex;
-}
+} 
 
 .card {
-    position: relative;
-    margin: 1%;
+    /* width: 100%;
+    height: 100%; */
     /* float: left; */
+    /* margin-left: 20px; */
     width: 250px;
     height: 300px;
     background-color: grey;
     border-radius: 5px;
     overflow: hidden;
     font-family: inherit;
-    /* margin-left: 20px; */
     margin-top: 20px;
 }
 
@@ -171,21 +177,21 @@
     font-size: inherit;
 }
 
-.card-title a {
+.card-music-title {
     text-decoration: none;
     color: inherit;
 }
 
-.card-title:hover a{
+.card-music-title:hover {
     color: gold;
 }
 
 .card-artist {
     font-size: 16px;
-    padding-top: 8px;
+    padding-top: 6px;
 }
 
-.card-artist a {
+.artist {
     text-decoration: none;
     color: white;
 }
