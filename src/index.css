@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -76,7 +74,7 @@
 }
 
 .audio {
-    margin-top: 0.5%;
+    margin: auto;
 }
 
 .footer__navigation {
@@ -84,36 +82,32 @@
     flex-direction: column;
 }
 
-.tags {
+.main_nav {
     list-style: none;
     font-size: 22px;
-    position: sticky;
-    top: 1%;
 }
 
-.tag {
+.option {
     margin-bottom: 30px;
     cursor: pointer;
 }
 
-.tag:hover {
+.option:hover {
     color: gold;
 }
 
-.other-tags {
+.additional_nav {
     list-style: none;
     font-size: 18px;
-    position: sticky;
-    bottom: 15%;
 }
 
-.other-tag {
+.other-option {
     margin-bottom: 30px;
     cursor: pointer;
     color: gold;
 }
 
-.other-tag:hover {
+.other-option:hover {
     color: black;
 }
 
@@ -144,16 +138,9 @@
     grid-template-columns: repeat(auto-fit, 300px);
     grid-gap: 20px;
     margin: 1%;
-    /* display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap; */
 } 
 
 .card {
-    /* width: 100%;
-    height: 100%; */
-    /* float: left; */
-    /* margin-left: 20px; */
     width: 250px;
     height: 300px;
     background-color: grey;
