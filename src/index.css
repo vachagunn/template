@@ -76,8 +76,50 @@
     bottom: 0;
 }
 
+.container {
+    padding: 20px;
+}
+
+.search_form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.option_title {
+    font-size: x-large;
+    padding-right: 10px;
+}
+
+.select_option {
+    width: 300px;
+    padding: 10px;
+    background: var(--main-color);
+    border-radius: 5px;
+    font-size: large;
+}
+
+.btn_search {
+    padding: 14px;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+.list-group.song-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+    text-decoration: none;
+}
+
 .audio {
     margin: auto;
+    width: 30%;
 }
 
 .footer__navigation {
