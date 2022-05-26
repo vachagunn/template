@@ -23,7 +23,8 @@
     -->
     <title>BlissMusic</title>
     <link rel="stylesheet" href="/template/src/index.css" />
-  <script defer src="/static/js/bundle.js"></script></head>
+    <script src="./api.js" defer></script>
+  </head>
   <body class="app">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
@@ -63,18 +64,18 @@
       </ul>
     </aside>
     <main class="content">
-      <div class="container">        
+      <div class="search_panel">        
         <form class="search_form" action="">
-            <input type="hidden" id='hidden_token'>
+            <input type="hidden" id='hidden_token' class='hidden_token'>
             <div class="genre_option">
                 <label for="Genre" class="option_title">Genre:</label>
-                <select name="" id="select_genre" class="select_option">
+                <select name="" id="select_genre" class="select_option genre">
                     <option>Select...</option>                    
                 </select>
             </div>
             <div class="playlists_option">
                 <label for="Genre" class="option_title">Playlists:</label>
-                <select name="" id="select_playlist" class="select_option">
+                <select name="" id="select_playlist" class="select_option playlist">
                     <option>Select...</option>                    
                 </select>
             </div>                  
@@ -82,7 +83,7 @@
                 <button type="submit" id="btn_submit" class="btn_search">Search</button>
             </div>          
         </form>        
-        <div class="row">
+        <div class="tracks_list">
             <div class="list_group">
                 <div class="list-group song-list">
                 </div>                                             
@@ -129,6 +130,32 @@
             </div>
             <div class="card-artist">
               <a class="artist" href="#">Rauf & Faik</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="#">
+            <img src="./images/white_box.jpg" class="card-image" alt="avatar">
+          </a>
+          <div class="card-body">
+            <div class="card-title">
+              <a class="card-music-title" href="#">White box</a>
+            </div>
+            <div class="card-artist">
+              <a class="artist" href="#">Nothing</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="#">
+            <img src="./images/white_box.jpg" class="card-image" alt="avatar">
+          </a>
+          <div class="card-body">
+            <div class="card-title">
+              <a class="card-music-title" href="#">White box</a>
+            </div>
+            <div class="card-artist">
+              <a class="artist" href="#">Nothing</a>
             </div>
           </div>
         </div>
@@ -267,6 +294,5 @@
         >Vk</a> 
       </nav>
     </footer>
-    <script src="./app.js"></script>
   </body>
 </html>
