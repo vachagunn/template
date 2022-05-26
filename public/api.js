@@ -90,11 +90,11 @@ const UIController = function() {
 
     // Объект для хранения ссылок на selector'ы  html
     const DOMElements = {
-        selectGenre: '#select_genre',
-        selectPlaylist: '#select_playlist',
-        buttonSubmit: '#btn_submit',
-        divSongDetail: '#song-detail',
-        hfToken: '#hidden_token',
+        selectGenre: '.genre',
+        selectPlaylist: '.playlist',
+        buttonSubmit: '.btn_search',
+        divSongDetail: '.track_details',
+        hfToken: '.hidden_token',
         divSonglist: '.song-list'
     }
 
@@ -113,26 +113,25 @@ const UIController = function() {
         // Методы для создания выбора опций
         createGenre(text, value) {
             const html = `<option value="${value}">${text}</option>`;
-            document.querySelector(DOMElements.selectGenre).insertAdjacentHTML('beforeend', html);
+            this.inputField().genre.insertAdjacentHTML('beforeend', html);
         }, 
 
         createPlaylist(text, value) {
             const html = `<option value="${value}">${text}</option>`;
-            document.querySelector(DOMElements.selectPlaylist).insertAdjacentHTML('beforeend', html);
+            this.inputField().playlist.insertAdjacentHTML('beforeend', html);
         },
 
         // Методы для создания списка треков
         createTrack(id, name) {
             const html = `<a href="#" class="list-group-item list-group-item-action list-group-item-light" id="${id}">${name}</a>`;
-            document.querySelector(DOMElements.divSonglist).insertAdjacentHTML('beforeend', html);
+            this.inputField().tracks.insertAdjacentHTML('beforeend', html);
         },
 
         // Метод для создания деталей трека (картинка, название, артист)
-
         createTrackDetail(img, title, artist) {
-            const detailDiv = document.querySelector(DOMElements.divSongDetail);
+            const trackDetails = this.inputField().songDetail; 
             // Очистка после клика на трек
-            detailDiv.innerHTML = '';
+            trackDetails.innerHTML = '';
             const html = 
             `
             <div class="img_track">
@@ -145,7 +144,7 @@ const UIController = function() {
                 <label for="artist" class="form-label-artist">By ${artist}</label>
             </div> 
             `;
-            detailDiv.insertAdjacentHTML('beforeend', html)
+            trackDetails.insertAdjacentHTML('beforeend', html)
         },
 
         resetTrackDetail() {
