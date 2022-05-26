@@ -98,6 +98,8 @@ const UIController = function() {
         divSonglist: '.song-list'
     }
 
+    const storeHfToken = document.querySelector(DOMElements.hfToken);
+
     return {
         // Метод - получение полей
         inputField() {
@@ -113,6 +115,7 @@ const UIController = function() {
         // Методы для создания выбора опций
         createGenre(text, value) {
             const html = `<option value="${value}">${text}</option>`;
+            /* this.inputField().genre.insertAdjacentHTML('beforeend', html); */
             this.inputField().genre.insertAdjacentHTML('beforeend', html);
         }, 
 
@@ -162,16 +165,15 @@ const UIController = function() {
         },
 
         storeToken(value) {
-            document.querySelector(DOMElements.hfToken).value = value;
+            storeHfToken.value = value;
         },
 
         getStoredToken() {
             return {
-                token: document.querySelector(DOMElements.hfToken).value
+                token: storeHfToken.value
             }
         }
     }
-
 }();
 
 const APPController = (function(UICtrl, APICtrl) {
@@ -248,9 +250,7 @@ const APPController = (function(UICtrl, APICtrl) {
             loadGenres();
         }
     }
-
 })(UIController, APIController);
-
 
 // Метод для загрузки жанров при загрузке страницы
 APPController.init();
