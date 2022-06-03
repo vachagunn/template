@@ -112,15 +112,6 @@
     border-radius: 5px;
 }
 
-.list-group.song-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 15px;
-    text-decoration: none;
-}
-
 .tracks_list {
     display: flex;
     justify-content: flex-start;
@@ -128,13 +119,18 @@
     gap: 5%;
 }
 
-.list-group.song-list a {
+.list-group-item {
     font-size: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
     text-decoration: none;
     color: black;
 }
 
-.list-group.song-list a:focus {
+.list-group-item:focus {
     color: var(--cards-bg-color);
 }
 
@@ -143,11 +139,13 @@
     flex-direction: column;
     justify-content: flex-start;
     flex-wrap: wrap;
-    width: 20%;
+    width: 50%;
+    gap: 10%;
 }
 
 .form-label-genre {
-    font-size: 32px;}
+    font-size: 32px;
+}
 
 .audio {
     margin: auto;
