@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -10,16 +13,17 @@
       content="Web site created using create-react-app"
     />
     <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
+      Notice the use of  in the main_nav above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>BlissMusic</title>
     <link rel="stylesheet" href="/template/src/index.css" />
+    <script type="module" src="./api.js" defer></script>
   </head>
   <body class="app">
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -28,8 +32,8 @@
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+      You can add webfonts, meta main_nav, or analytics to this file.
+      The build step will place the bundled scripts into the <body> option.
 
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
@@ -46,20 +50,48 @@
         </nav>
       </header>
     <aside class="side_panel">
-      <ul class="tags">
-        <li class="tag" tabindex="0">Home</li>
-        <li class="tag" tabindex="0">My library</li>
-        <li class="tag" tabindex="0">Create playlist</li>
+      <ul class="main_nav">
+        <li class="option" tabindex="0">Home</li>
+        <li class="option" tabindex="0">My library</li>
+        <li class="option" tabindex="0">Playlists</li>
       </ul>
-      <ul class="other-tags">
-        <li class="other-tag" tabindex="0">In trend</li>
-        <li class="other-tag" tabindex="0">Top Gaming Tracks</li>
-        <li class="other-tag" tabindex="0">Top Russian Tracks</li>
-        <li class="other-tag" tabindex="0">World Top 100</li>
-        <li class="other-tag" tabindex="0"></li>
+      <ul class="additional_nav">
+        <li class="other-option" tabindex="0">In trend</li>
+        <li class="other-option" tabindex="0">Top Gaming Tracks</li>
+        <li class="other-option" tabindex="0">Top Russian Tracks</li>
+        <li class="other-option" tabindex="0">World Top 100</li>
+        <li class="other-option" tabindex="0"></li>
       </ul>
     </aside>
     <main class="content">
+      <div class="search_panel">        
+        <form class="search_form" action="">
+            <input type="hidden" id='hidden_token' class='hidden_token'>
+            <div class="genre_option">
+                <label for="Genre" class="option_title">Genre:</label>
+                <select name="" id="select_genre" class="select_option genre">
+                    <option>Select...</option>                    
+                </select>
+            </div>
+            <div class="playlists_option">
+                <label for="Genre" class="option_title">Playlists:</label>
+                <select name="" id="select_playlist" class="select_option playlist">
+                    <option>Select...</option>                    
+                </select>
+            </div>                  
+            <div class="button_search">
+                <button type="submit" id="btn_submit" class="btn_search">Search</button>
+            </div>          
+        </form>        
+        <div class="tracks_list">
+            <div class="list_group">
+                <div class="list-group song-list">
+                </div>                                             
+            </div>
+            <div class="track_details" id="song-detail">                
+            </div>
+        </div>   
+      </div> 
       <h2 class="category">Music for you</h2>
       <div class="cards">
         <div class="card">
@@ -68,10 +100,10 @@
           </a>
           <div class="card-body">
             <div class="card-title">
-              <a href="#">Dead Love</a>
+              <a class="card-music-title" href="#">Dead Love</a>
             </div>
             <div class="card-artist">
-              <a href="#">May Waves</a>
+              <a class="artist" href="#">May Waves</a>
             </div>
           </div>
         </div>
@@ -81,10 +113,10 @@
           </a>
           <div class="card-body">
             <div class="card-title">
-              <a href="#">Camry 3.5</a>
+              <a class="card-music-title" href="#">Camry 3.5</a>
             </div>
             <div class="card-artist">
-              <a href="#">UncleFlexxx</a>
+              <a class="artist" href="#">UncleFlexxx</a>
             </div>
           </div>
         </div>
@@ -94,10 +126,10 @@
           </a>
           <div class="card-body">
             <div class="card-title">
-              <a href="#">I love you</a>
+              <a class="card-music-title" href="#">I love you</a>
             </div>
             <div class="card-artist">
-              <a href="#">Rauf & Faik</a>
+              <a class="artist" href="#">Rauf & Faik</a>
             </div>
           </div>
         </div>
@@ -107,10 +139,10 @@
           </a>
           <div class="card-body">
             <div class="card-title">
-              <a href="#">White box</a>
+              <a class="card-music-title" href="#">White box</a>
             </div>
             <div class="card-artist">
-              <a href="#">Nothing</a>
+              <a class="artist" href="#">Nothing</a>
             </div>
           </div>
         </div>
@@ -120,10 +152,10 @@
           </a>
           <div class="card-body">
             <div class="card-title">
-              <a href="#">White box</a>
+              <a class="card-music-title" href="#">White box</a>
             </div>
             <div class="card-artist">
-              <a href="#">Nothing</a>
+              <a class="artist" href="#">Nothing</a>
             </div>
           </div>
         </div>
@@ -133,10 +165,36 @@
           </a>
           <div class="card-body">
             <div class="card-title">
-              <a href="#">White box</a>
+              <a class="card-music-title" href="#">White box</a>
             </div>
             <div class="card-artist">
-              <a href="#">Nothing</a>
+              <a class="artist" href="#">Nothing</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="#">
+            <img src="./images/white_box.jpg" class="card-image" alt="avatar">
+          </a>
+          <div class="card-body">
+            <div class="card-title">
+              <a class="card-music-title" href="#">White box</a>
+            </div>
+            <div class="card-artist">
+              <a class="artist" href="#">Nothing</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="#">
+            <img src="./images/white_box.jpg" class="card-image" alt="avatar">
+          </a>
+          <div class="card-body">
+            <div class="card-title">
+              <a class="card-music-title" href="#">White box</a>
+            </div>
+            <div class="card-artist">
+              <a class="artist" href="#">Nothing</a>
             </div>
           </div>
         </div>
@@ -149,10 +207,10 @@
           </a>
           <div class="card-body">
             <div class="card-title">
-              <a href="#">001</a>
+              <a class="card-music-title" href="#">001</a>
             </div>
             <div class="card-artist">
-              <a href="#">FREE FLOW FLAVA</a>
+              <a class="artist" href="#">FREE FLOW FLAVA</a>
             </div>
           </div>
         </div>
@@ -162,10 +220,10 @@
           </a>
           <div class="card-body">
             <div class="card-title">
-              <a href="#">Faith</a>
+              <a class="card-music-title" href="#">Faith</a>
             </div>
             <div class="card-artist">
-              <a href="#">FREE FLOW FLAVA</a>
+              <a class="artist" href="#">FREE FLOW FLAVA</a>
             </div>
           </div>
         </div>
@@ -175,10 +233,10 @@
           </a>
           <div class="card-body">
             <div class="card-title">
-              <a href="#">Eurobeat</a>
+              <a class="card-music-title" href="#">Eurobeat</a>
             </div>
             <div class="card-artist">
-              <a href="#">Initial D</a>
+              <a class="artist" href="#">Initial D</a>
             </div>
           </div>
         </div>
@@ -188,10 +246,10 @@
           </a>
           <div class="card-body">
             <div class="card-title">
-              <a href="#">White box</a>
+              <a class="card-music-title" href="#">White box</a>
             </div>
             <div class="card-artist">
-              <a href="#">Nothing</a>
+              <a class="artist" href="#">Nothing</a>
             </div>
           </div>
         </div>
@@ -201,10 +259,10 @@
           </a>
           <div class="card-body">
             <div class="card-title">
-              <a href="#">White box</a>
+              <a class="card-music-title" href="#">White box</a>
             </div>
             <div class="card-artist">
-              <a href="#">Nothing</a>
+              <a class="artist" href="#">Nothing</a>
             </div>
           </div>
         </div>
@@ -214,10 +272,10 @@
           </a>
           <div class="card-body">
             <div class="card-title">
-              <a href="#">White box</a>
+              <a class="card-music-title" href="#">White box</a>
             </div>
             <div class="card-artist">
-              <a href="#">Nothing</a>
+              <a class="artist" href="#">Nothing</a>
             </div>
           </div>
         </div>
@@ -225,7 +283,7 @@
     </main>
     <footer class="footer">
       <p>© 2022 shakhnazaryan vachik</p>
-      <p>*Здесь должен быть плеер</p>
+      <audio class="audio" id="audio" src="./audio/andro_-_kak_ne_lyubit__muzati.net.mp3" controls></audio>
       <nav class="footer__navigation">
         <a class="link" href="./images/">Pricing</a>
         <a 
