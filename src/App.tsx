@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { measureMemory } from "vm";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import MainContent from "./components/MainContent";
@@ -10,7 +11,10 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const loadToken = async () => {
-      setController(await new SpotifyController().getToken());
+      await new SpotifyController()
+      .getToken()
+      .then(setController)
+      .catch((message) => alert("Auth failed. " + message));
     };
     loadToken();
   }, []);

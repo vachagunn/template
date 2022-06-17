@@ -1,9 +1,10 @@
 // @ts-ignore
+// Чтобы не делать файл модулем и не импортировать в каждый файл отдельно
 
 interface IExecuteResponse {
   ok: boolean;
-  response?: any;
-  error?: any;
+  response?: unknown;
+  error?: unknown;
 }
 
 interface IMusicCardProps {

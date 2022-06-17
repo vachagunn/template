@@ -5,14 +5,13 @@ class SpotifyController implements ISpotifyController {
 
   private async execute(
     url: string,
-    config?: RequestInit
-  ): Promise<IExecuteResponse> {
-    config ??= {
+    config: RequestInit = {
       method: "GET",
       headers: { Authorization: "Bearer " + this.token },
-    };
-    const result = await fetch(url, config).catch(() => {});
-    if (!result?.ok) return { ok: false };
+    }
+  ): Promise<IExecuteResponse> {
+    const result = await fetch(url, config).catch(console.error);
+    if (!result || !result?.ok) return { ok: false };
 
     const data = await result
       .json()
@@ -21,7 +20,7 @@ class SpotifyController implements ISpotifyController {
     return data;
   }
 
-  getToken = async () => {
+  async getToken() {
     const config = {
       method: "POST",
       headers: {
@@ -35,7 +34,8 @@ class SpotifyController implements ISpotifyController {
       "https://accounts.spotify.com/api/token",
       config
     );
-    if (res.ok) this.token = String(res.response.access_token);
+    if (!res.ok) throw new Error("Can't get token");
+    this.token = (res.response as { access_token: string }).access_token;
     return this;
   };
 
@@ -44,8 +44,9 @@ class SpotifyController implements ISpotifyController {
     const res = await this.execute(
       `https://api.spotify.com/v1/browse/categories?locale=sv_US`
     );
-    if (!res.ok) throw new Error(res.error);
-    return res.response.categories.items as IGenre[];
+    if (!res.ok) throw new Error(String(res.error));
+    return (res.response as { categories: { items: IGenre[] } }).categories
+      .items as IGenre[];
   };
 
   getPlaylistByGenre = async (genreId: string): Promise<IPlaylist[]> => {
@@ -54,23 +55,24 @@ class SpotifyController implements ISpotifyController {
     const res = await this.execute(
       `https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`
     );
-    if (!res.ok) throw new Error(res.error);
-    return res.response.playlists.items;
+    if (!res.ok) throw new Error(String(res.error));
+    return (res.response as { playlists: { items: IPlaylist[] } }).playlists
+      .items;
   };
 
   getTracks = async (tracksEndPoint: string): Promise<ITrack[]> => {
     if (!this.token) throw new Error("No token");
     const limit = 10;
     const res = await this.execute(`${tracksEndPoint}?limit=${limit}`);
-    if (!res.ok) throw new Error(res.error);
-    return res.response.items;
+    if (!res.ok) throw new Error(String(res.error));
+    return (res.response as { items: ITrack[] }).items;
   };
 
   getTrackDetail = async (trackEndPoint: string): Promise<ITrackDetail> => {
     if (!this.token) throw new Error("No token");
     const res = await this.execute(trackEndPoint);
-    if (!res.ok) throw new Error(res.error);
-    return res.response;
+    if (!res.ok) throw new Error(String(res.error));
+    return res.response as ITrackDetail;
   };
 }
 

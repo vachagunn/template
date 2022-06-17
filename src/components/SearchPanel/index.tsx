@@ -41,7 +41,7 @@ const SearchPanel: React.FC<ISearchPanelProps> = ({ controller }) => {
       setGenres(res);
     };
     loadGenres();
-  }, [controller]);
+  }, []);
 
   return (
     <div className="search_panel">
